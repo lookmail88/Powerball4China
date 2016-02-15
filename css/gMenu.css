@@ -1,0 +1,40 @@
+
+#topmenu,
+#topmenu ul,
+#topmenu ul li 		{
+						list-style: none;
+						line-height: 2em;
+						margin: 0px;
+						padding: 0px;
+						z-index: 1000;
+                        overflow: hidden;
+                        white-space:nowrap;
+						background-color: #555;
+						color: white;
+						font-weight: 400;
+						font-size: 20px;
+					}
+
+
+/* unvisited link */
+#topmenu a:link,#topmenu a:visited,#topmenu a:hover,#topmenu a:active {
+    color: white;
+	text-decoration: none;
+
+}
+#topmenu a:hover{
+	text-decoration: underline;
+}
+
+#topmenu li:hover{
+	background-color: black;
+}
+
+/*
+This is for test
+
+#topmenu ul li{
+                        border:1px solid blue;
+}
+*/
+

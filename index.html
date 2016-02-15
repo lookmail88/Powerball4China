@@ -4,22 +4,73 @@
 	<title>PowerBall in China</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+	<script src="./js/jquery/jquery-2.1.3.min.js"></script>
+	<script src="./js/bootstrap/bootstrap.min.js"></script>
+	<script src="/js/angular/angular.js"></script>
+	<script src="/js/angular/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular-sanitize.js"></script>
+	<script src="./js/site/gMenu.js"></script>
+
 	<link rel="stylesheet" href="./css/normalize.css" />
 	<link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />
 	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/gMenu.css"/>
 
-	<script src="./js/bootstrap/bootstrap.min.js" />
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="./js/angular/angular.js" />
-	<script src="./js/angular/angular-route.js" />
+	<script language="javascript">
+				var menudata=[
+	{"title":"首页","url":"/index.html","submenu":null},
+	{"title":"购买彩票","url":"/buyer/buy.html","submenu":null},
+	{"title":"代理计划","url":"/agent/agent.html","submenu":null},
+	{"title":"关于我们","url":"/aboutus.html","submenu":null},
+	{"title":"&nbsp&nbsp","url":" ","submenu":null},
+	{"title":"登陆","url":"#",attr:"id='login'","submenu":null},
+	{"title":"注册","url":"#",attr:"id='reg'","submenu":null}
+			 ];
+		$(document).ready( function() {
 
+    		$("#topmenu").gmenu({
+				datasource:menudata,
+				menumargin:"0",
+				menutextalign:"center",
+				topmenufloat:"left",
+                submenufloat:"none",
+				padview:{
+					initwidth:"400"},
+				mobileview:{
+					initwidth:"400"
+				}
+			});
+
+			$("#login").click(function(){
+				$('#win_login').modal();
+			});
+			$("#reg").click(function(){
+
+				$('#win_reg').modal();
+			});
+		});
+	</script>
 </head>
-<body>
+<body ng-app="">
 
+	<header>
 
+		<div class="container">
 
+			<div class="row">
+				<div class="col-md-2" ><img src="./imgs/materials/Powerball_GameLogo.png" width="100%"></div>
+				<div class="col-md-10" id="topmenu"></div>
+			</div>
+		</div>
+	</header>
 
+	<main></main>
 
-</body>
+	<footer></footer>
 
+<div   ng-include="'./template/win_login.html'"></div>
+<div   ng-include="'./template/win_reg.html'"></div>
+
+	</body>
 </html>

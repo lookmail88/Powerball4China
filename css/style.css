@@ -1,0 +1,12 @@
+ul,li{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+header,footer{
+	background-color: #555;
+}
+header>div{
+
+}
